@@ -1,30 +1,30 @@
-class Environment :
-	def __init__(self, cl, sl) :
+class Environment :								#class to define actual agent and shore location
+	def __init__(self, cl, sl) :				#takes cl and sl and current agent and shore location
 		self.currentLocation = cl
 		self.shoreLocation = sl
 	 
-	def updateState(self, action, steps) :
+	def updateState(self, action, steps) :	#updates environment depending on agent response
 		if(action == "right") :
 			self.currentLocation += steps
 		elif(action == "left") :
 			self.currentLocation -= steps
 	
-	def providePerception(self) :
+	def providePerception(self) :				#provides perception to the agent
 		if(self.currentLocation == self.shoreLocation) :
 			return True
 		else :
 			return False
 
-class Agent :
-	def __init__(self) :
+class Agent :										#class to define agent's view of environment
+	def __init__(self) :							#agent thinks he's the center of the world ;)
 		self.location = 0
 		self.direction = "left"
 		self.steps = 0
 	
-	def getPerception(self, env) :
+	def getPerception(self, env) :			#funtion to perceive the environment
 		return env.providePerception()
 	
-	def takeAction(self, env) :
+	def takeAction(self, env) :				#function to take steps in the required direction
 		self.steps += 1
 		if(self.direction == "left") :
 			self.direction = "right"
