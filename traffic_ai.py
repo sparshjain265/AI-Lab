@@ -1,32 +1,26 @@
-##
+#!/usr/bin/python
 #	Program Name: traffic.py
 #	Programmer	: Sparsh Jain
 #	Roll No		: 111601026
 #	Date			: August 12, 2018
 #	Description	: Creates a csv file named output.csv where each column gives the time of entry of a vehicle at the corresponding node in its path
 
-#!/usr/bin/python
 import numpy as np
 import pickle as pk
 import math
 import Queue as Q
 
 #class Environment contains matrix of road network, a matrix of road status (number of vehicles in the corresponding road), 
-# #total number of vehicles, and total number of vehicles who have completed their journey
 class Environment :
-	def __init__(self, road, n) :
+	def __init__(self, road) :
 		self.road = road
 		self.state = np.reshape([0]*road.shape[0]*road.shape[1], (road.shape))
-		self.n = n
-		self.completed = 0
 
 	#function updateState defined to update the status (number of vehicles in a road) when a vehicle enters/exits a road
 	def updateState(self, status, source, destination) :
 		if(status[0] != 0) :	#if the vehicle is starting the journey, no need to reduce the number of vehicles on any road
 			self.state[status[1], status[2]] -= 1
-		if(status[0] == 4) :	#if the vehicle has finished the journey, update the number of vehicles who have completed their journey
-			self.completed += 1
-		else :	#otherwise increase the number of vehicles where the vehicle enters
+		if(status[0] < 4) :	#if the vehicle has not finished the journey, increment the number of vehicles on next road it takes
 			self.state[source][destination] += 1
 	
 	#function providePerception to return the distance of the road and the number of cars already on the road
@@ -62,6 +56,7 @@ class Agent :
 		return cmp(self.time, other.time)
 	
 	#function takeAction to take an Action based on the current status of the car
+	#returns whethe the vehicle has completed the journey or not
 	def takeAction(self, env) :
 		#if the car has not finished it's journey
 		if(self.status[0] < 4) :
@@ -84,8 +79,8 @@ class Agent :
 			source = 0
 			destination = 0
 			self.completed = True
-			self.time = float("inf")
 			env.updateState(self.status, source, destination)
+		return self.completed
 
 #load road network, starting time, and paths for vehicles
 road = np.array(pk.load(open("road", "r")))
@@ -94,21 +89,28 @@ paths = np.array(pk.load(open("vehicle", "r")))
 #store the total number of cars
 n = len(time)
 
-#create a city and place vehicles in the city with the given information
-city = Environment(road, n)
+#create a city and place vehicles in the city with the given information in a priority queue
+#the queue takes next instant the vehicle changes the road as priority
+city = Environment(road)
 vehicle = Q.PriorityQueue()
 for i in range(n) :
 	vehicle.put(Agent(time[i], paths[i], i))
 
-#using priority queue, take the vehicle with the next immidiate time of movement and take action on it until all the vehicles have reached destination
-while(city.completed < city.n) :
-	min = vehicle.get()
-	min.takeAction(city)
-	vehicle.put(min)
-
-#create an output matrix and store it in a csv format
+#create an empty output matrix (to be filled as vehicles complete their journey)
 output = np.zeros((n, 5))
+
+#while the vehicles who have not completed the journey exist
 while not vehicle.empty() :
-	v = vehicle.get()
-	output[v.i] = v.timeStamp
-np.savetxt("output_ai.csv", output, delimiter=",")
+	#get the vehicle with next time instance
+	min = vehicle.get()
+	#take action and check whether it has completed it's journey
+	min_completed = min.takeAction(city)
+	#if not, put it back in the queue
+	if(not min_completed) :
+		vehicle.put(min)
+	#else update the corresponding entry in the output matrix as it's timeStamp
+	else :
+		output[min.i] = min.timeStamp
+
+#store the output in a csv format
+np.savetxt("output.csv", output, delimiter=",")
