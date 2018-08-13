@@ -1,0 +1,14 @@
+Name			: Sparsh Jain
+Roll No		: 111601026
+
+Description	: 
+					The Environment (City) keeps track of the road network as well as how many vehicles are there in a particular road at a particular time.
+						It gives the distance and the number of cars on the required road as perception to the vehicle					
+
+					The Agents (Vehicles) keep track of what is the path it has to follow, when it will start from it's first node, which road is it currently on,
+						whether it has completed it's journey or not, when will it reach it's next node, what is index of the vehicle and the timeStamp of when it 
+						was on a certain node corresponding to in the path.
+						Since, one vehicle need not know the information about all the vehicles, we've made a list of vehicles arranged in priority queue with the
+						next time instance it needs to enter/exit a road. Priority Queue allows to pick the next vehicle which needs to enter/exit road with ease
+						and we put it back in the queue with the updated time if the journey is not completed. Otherwise, the timeStamp of the vehicle is copied to 
+						the output matrix which is later saved in a csv format.
