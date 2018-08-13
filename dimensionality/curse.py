@@ -1,6 +1,7 @@
 import numpy as np 
 import math
 import random
+import matplotlib.pyplot as plt
 
 class Grid :
 	def __init__(self, L, dim) :
@@ -21,8 +22,8 @@ class Grid :
 				self.state[d] += 1
 	
 	def providePerception(self) :
-		r = cmp(self.state, self.goal)
-		if(r == 0) :
+		r = np.sum(self.state)
+		if(r == self.dim*self.L) :
 			return 1
 		else :
 			return 0
@@ -39,9 +40,9 @@ class randomAgent :
 			self.steps += 1
 		return self.steps
 
-steps = np.zeros((3,10,100))
-avg = np.zeros((3,10))
-for i in range(3) :
+steps = np.zeros((5,10,100))
+avg = np.zeros((5,10))
+for i in range(5) :
 	dim = i + 1
 	for j in range(10) :
 		L = j + 1
@@ -53,5 +54,8 @@ for i in range(3) :
 		avg[i][j] = avg[i][j]/100.0
 
 np.set_printoptions(formatter={'float': lambda x: "{0:0.3f}".format(x)})
-print avg
+print(avg)
 
+#plt.plot(np.arange(1,11), avg[2])
+plt.plot(np.arange(1, 6), avg.transpose()[10])
+plt.show()
