@@ -1,0 +1,12 @@
+Name: Sparsh Jain
+Roll: 111601026
+
+Logic:
+Use Priority Queue for search tree
+Using counter for priority gives normal BFS
+Using heuristic for priority gives astar algorithm
+
+Sample input and output are attached
+same input for both 4way and 8way
+output1 for 4way
+output2 for 8way

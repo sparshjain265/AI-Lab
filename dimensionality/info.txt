@@ -1,0 +1,13 @@
+Name: Sparsh Jain
+Roll: 111601026
+
+Logic: (curse.py)
+Run the random agent for dimensions 1 to maxDim for 10 cases and take average number of steps
+Plot the graph and we can see the curse of dimensionality
+
+On running for max dim = 10, and L = 3, the output is attached
+
+dim.py is was an older attempt at the quesion with different classes for different dimensions. switched to curse for a more general approach!
+
+
+Traffic Simulator was already done using Priority Queues

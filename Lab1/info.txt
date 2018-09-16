@@ -1,0 +1,11 @@
+Name: Sparsh Jain
+Roll No: 111601026
+
+Included python files for the given programs which are well commented
+Included sample inputs for the programs and a bash file which will save the output for the sample inputs in the corresponding output file for all the programs
+
+Logic:
+1. Bunny problem: The bunny just moves left and right until he reaches the beach
+2. Bunny 2D problem: The bunny moves spirally outwards until he reaches the beach
+3. vacuumBot problem: The bot moves spirally outwards until it finds the dirt and cleans it
+4. count word problem: The program stores a mode which states whether we were reading a character or a whitespace in the previous read from file and makes a decision based on that along with the currently read character

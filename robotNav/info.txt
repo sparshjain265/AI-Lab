@@ -1,0 +1,7 @@
+Name: Sparsh Jain
+Roll: 111601026
+
+Logic:
+Use BFS to find the shortest path while storing visited and parent nodes
+
+Sample input and output are attached

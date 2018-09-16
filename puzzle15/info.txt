@@ -1,0 +1,11 @@
+Name: Sparsh Jain
+Roll: 111601026
+
+A sample input and sample output has been attached
+
+Logic:
+A simple BFS is used to find the optimal path to the goal state (if exists, checked using parity)
+Visited list is not used to time complexity is not the best
+To find the path, we know that from each node there are exactly 4 children and we also know that we exit the tree when we reach the goal state with the best path
+Hence, numbering the nodes (starting from 1) in level order, we can find the path by which we came
+To achieve this fully filled search tree, we inserted False in the tree for illegal moves

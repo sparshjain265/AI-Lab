@@ -88,7 +88,7 @@ class randomAgent :
 			a = random.randint(0, 2*self.dim - 1)
 			env.updateState(self.actions[a])
 			self.steps += 1
-		print self.steps
+		print (self.steps)
 
 line2 = Line(2)
 grid2d2 = Grid2D(2)

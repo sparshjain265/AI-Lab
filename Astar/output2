@@ -1,0 +1,33 @@
+Enter the dimension of the grid: Enter the grid matrix: 
+Enter the starting position 
+Enter the final position 
+
+By BFS
+Start
+TopRight
+Up
+TopRight
+TopRight
+TopRight
+Number of steps: 5
+BFS Counter: 291
+
+By Euclidean Heuristic
+Start
+TopRight
+TopRight
+TopRight
+TopRight
+Up
+Number of steps: 5
+Euclidean Counter: 27
+
+By Manhattan Heuristic
+Start
+TopRight
+TopRight
+TopRight
+TopRight
+Up
+Number of steps: 5
+Manhattan Counter: 27

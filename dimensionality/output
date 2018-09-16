@@ -1,0 +1,203 @@
+Enter Max Dimension: Enter L: Dimension: 1, Case: 1
+Steps taken: 10
+Dimension: 1, Case: 2
+Steps taken: 1
+Dimension: 1, Case: 3
+Steps taken: 1
+Dimension: 1, Case: 4
+Steps taken: 1
+Dimension: 1, Case: 5
+Steps taken: 8
+Dimension: 1, Case: 6
+Steps taken: 3
+Dimension: 1, Case: 7
+Steps taken: 12
+Dimension: 1, Case: 8
+Steps taken: 1
+Dimension: 1, Case: 9
+Steps taken: 19
+Dimension: 1, Case: 10
+Steps taken: 1
+Dimension: 2, Case: 1
+Steps taken: 24
+Dimension: 2, Case: 2
+Steps taken: 10
+Dimension: 2, Case: 3
+Steps taken: 13
+Dimension: 2, Case: 4
+Steps taken: 64
+Dimension: 2, Case: 5
+Steps taken: 44
+Dimension: 2, Case: 6
+Steps taken: 65
+Dimension: 2, Case: 7
+Steps taken: 35
+Dimension: 2, Case: 8
+Steps taken: 26
+Dimension: 2, Case: 9
+Steps taken: 3
+Dimension: 2, Case: 10
+Steps taken: 30
+Dimension: 3, Case: 1
+Steps taken: 123
+Dimension: 3, Case: 2
+Steps taken: 516
+Dimension: 3, Case: 3
+Steps taken: 6
+Dimension: 3, Case: 4
+Steps taken: 171
+Dimension: 3, Case: 5
+Steps taken: 603
+Dimension: 3, Case: 6
+Steps taken: 306
+Dimension: 3, Case: 7
+Steps taken: 176
+Dimension: 3, Case: 8
+Steps taken: 77
+Dimension: 3, Case: 9
+Steps taken: 3
+Dimension: 3, Case: 10
+Steps taken: 993
+Dimension: 4, Case: 1
+Steps taken: 162
+Dimension: 4, Case: 2
+Steps taken: 37
+Dimension: 4, Case: 3
+Steps taken: 1356
+Dimension: 4, Case: 4
+Steps taken: 1061
+Dimension: 4, Case: 5
+Steps taken: 1980
+Dimension: 4, Case: 6
+Steps taken: 254
+Dimension: 4, Case: 7
+Steps taken: 762
+Dimension: 4, Case: 8
+Steps taken: 190
+Dimension: 4, Case: 9
+Steps taken: 759
+Dimension: 4, Case: 10
+Steps taken: 1066
+Dimension: 5, Case: 1
+Steps taken: 1650
+Dimension: 5, Case: 2
+Steps taken: 745
+Dimension: 5, Case: 3
+Steps taken: 452
+Dimension: 5, Case: 4
+Steps taken: 1209
+Dimension: 5, Case: 5
+Steps taken: 2436
+Dimension: 5, Case: 6
+Steps taken: 2558
+Dimension: 5, Case: 7
+Steps taken: 316
+Dimension: 5, Case: 8
+Steps taken: 106
+Dimension: 5, Case: 9
+Steps taken: 4190
+Dimension: 5, Case: 10
+Steps taken: 405
+Dimension: 6, Case: 1
+Steps taken: 6197
+Dimension: 6, Case: 2
+Steps taken: 1175
+Dimension: 6, Case: 3
+Steps taken: 7126
+Dimension: 6, Case: 4
+Steps taken: 16114
+Dimension: 6, Case: 5
+Steps taken: 7066
+Dimension: 6, Case: 6
+Steps taken: 2442
+Dimension: 6, Case: 7
+Steps taken: 16168
+Dimension: 6, Case: 8
+Steps taken: 6468
+Dimension: 6, Case: 9
+Steps taken: 1033
+Dimension: 6, Case: 10
+Steps taken: 2144
+Dimension: 7, Case: 1
+Steps taken: 8502
+Dimension: 7, Case: 2
+Steps taken: 3074
+Dimension: 7, Case: 3
+Steps taken: 60417
+Dimension: 7, Case: 4
+Steps taken: 7767
+Dimension: 7, Case: 5
+Steps taken: 46499
+Dimension: 7, Case: 6
+Steps taken: 32244
+Dimension: 7, Case: 7
+Steps taken: 80357
+Dimension: 7, Case: 8
+Steps taken: 74198
+Dimension: 7, Case: 9
+Steps taken: 101122
+Dimension: 7, Case: 10
+Steps taken: 29443
+Dimension: 8, Case: 1
+Steps taken: 259711
+Dimension: 8, Case: 2
+Steps taken: 133872
+Dimension: 8, Case: 3
+Steps taken: 148165
+Dimension: 8, Case: 4
+Steps taken: 142250
+Dimension: 8, Case: 5
+Steps taken: 222472
+Dimension: 8, Case: 6
+Steps taken: 100139
+Dimension: 8, Case: 7
+Steps taken: 20165
+Dimension: 8, Case: 8
+Steps taken: 70823
+Dimension: 8, Case: 9
+Steps taken: 48190
+Dimension: 8, Case: 10
+Steps taken: 387076
+Dimension: 9, Case: 1
+Steps taken: 297609
+Dimension: 9, Case: 2
+Steps taken: 981419
+Dimension: 9, Case: 3
+Steps taken: 259265
+Dimension: 9, Case: 4
+Steps taken: 1575410
+Dimension: 9, Case: 5
+Steps taken: 18223
+Dimension: 9, Case: 6
+Steps taken: 118602
+Dimension: 9, Case: 7
+Steps taken: 22089
+Dimension: 9, Case: 8
+Steps taken: 212181
+Dimension: 9, Case: 9
+Steps taken: 98017
+Dimension: 9, Case: 10
+Steps taken: 1137120
+Dimension: 10, Case: 1
+Steps taken: 2700839
+Dimension: 10, Case: 2
+Steps taken: 165184
+Dimension: 10, Case: 3
+Steps taken: 3301444
+Dimension: 10, Case: 4
+Steps taken: 1442565
+Dimension: 10, Case: 5
+Steps taken: 1153201
+Dimension: 10, Case: 6
+Steps taken: 1993000
+Dimension: 10, Case: 7
+Steps taken: 1687836
+Dimension: 10, Case: 8
+Steps taken: 2850900
+Dimension: 10, Case: 9
+Steps taken: 5244500
+Dimension: 10, Case: 10
+Steps taken: 1942452
+Average steps taken for L = 3 from dimensions 1 to 10
+[5.700 31.400 297.400 762.700 1406.700 6593.300 44362.300 153286.300
+ 471993.500 2248192.100]
