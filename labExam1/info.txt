@@ -1,0 +1,32 @@
+Basically the problem is always solvable!
+
+We can take the sum of manhattan distances of all misplaced tiles as heuristic and perform Astar search
+
+Remember to not add manhatter distances of n**2 and n**2 - 1 term
+
+state space is very large = (n*n)!  / 2
+# actions = 8 (4 directions for each blank tile)
+
+I represent blanks as n*n - 1 and n*n but while checking for goal state, I check twice
+once as it is and then after swapping
+if not found, I swipe them back in their original position
+
+in the algorithm, I maintain a state space which takes string of matrix as index and gives out
+the matrix, parent matrix, action taken, total cost till now, and heuristic
+
+I also maintain a visited list and a frontier to help during the algorithm
+Priority Queue in the form of heap is used in the algorithm
+
+initially, put only start state in queue and frontier
+then take a loop which runs till the queue is empty or break if solution is found
+since the solution always exists, queue will not get empty before that
+
+in each loop, the most priority element is popped out and all 8 actions are applied on them
+if the action succeeds, then we update the queue (and frontier) accordingly after changing/adding the node in the state space
+
+thus the state space contains only the states of the nodes seen during the run
+
+Since only 1 item is being popped in every run of while loop, and only once we are checking for goal state
+keeping a counter which increments everytime the while loop excecutes gives us the number of nodes explored
+
+an input file and an output file (for the corresponding input) is attached
