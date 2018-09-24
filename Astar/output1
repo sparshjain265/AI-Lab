@@ -56,7 +56,7 @@ Up
 Up
 Up
 Number of steps: 23
-Euclidean Counter: 128
+Euclidean Counter: 161
 
 By Manhattan Heuristic
 Start
@@ -84,4 +84,4 @@ Up
 Up
 Up
 Number of steps: 23
-Manhattan Counter: 131
+Manhattan Counter: 153

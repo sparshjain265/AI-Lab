@@ -112,7 +112,7 @@ class Agent:
 		self.Q = []
 		heapq.heapify(self.Q)
 		counter = 0
-		heapq.heappush(self.Q, (env.heuristic(heu, counter), [env.x, env.y, self.p, 0]))
+		heapq.heappush(self.Q, (self.p + env.heuristic(heu, counter), [env.x, env.y, self.p, 0]))
 		while(self.Q):
 			_, [sx, sy, self.p, action] = heapq.heappop(self.Q)
 			
@@ -127,19 +127,19 @@ class Agent:
 
 			if(env.up()):
 				counter += 1
-				heapq.heappush(self.Q, (env.heuristic(heu, counter), [env.x, env.y, self.p + 1, 1]))
+				heapq.heappush(self.Q, (self.p + 1 + env.heuristic(heu, counter), [env.x, env.y, self.p + 1, 1]))
 				env.down()
 			if(env.down()):
 				counter += 1
-				heapq.heappush(self.Q, (env.heuristic(heu, counter), [env.x, env.y, self.p + 1, 2]))
+				heapq.heappush(self.Q, (self.p + 1 + env.heuristic(heu, counter), [env.x, env.y, self.p + 1, 2]))
 				env.up()
 			if(env.left()):
 				counter += 1
-				heapq.heappush(self.Q, (env.heuristic(heu, counter), [env.x, env.y, self.p + 1, 3]))
+				heapq.heappush(self.Q, (self.p + 1 + env.heuristic(heu, counter), [env.x, env.y, self.p + 1, 3]))
 				env.right()
 			if(env.right()):
 				counter += 1
-				heapq.heappush(self.Q, (env.heuristic(heu, counter), [env.x, env.y, self.p + 1, 4]))
+				heapq.heappush(self.Q, (self.p + 1 + env.heuristic(heu, counter), [env.x, env.y, self.p + 1, 4]))
 				env.left()
 
 		return -1
