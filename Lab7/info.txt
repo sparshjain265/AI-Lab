@@ -1,0 +1,16 @@
+Name: Sparsh Jain
+Roll: 111601026
+
+Logic:
+	distance.py calculates shortes path using euclidean distance as heuristics
+	travel.py calculates quickest path as per given congestin using euclidean distance as heuristics
+
+	haven't been able to complete budget.py yet, there seems to be a small bug in the code
+	
+	takes input as
+	Line1: n as number of nodes
+	next n lines: coordinates of the nodes
+	Line n + 2: e as number of edges
+	next e lines: edge details
+	line n + e + 3: starting node
+	line n + e + 4: goal node
