@@ -1,0 +1,5 @@
+Name: Sparsh Jain
+Roll: 111601026
+
+it is a simple modification in n**2-1 problem
+a sample input and output file is attached

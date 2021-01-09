@@ -1,0 +1,14 @@
+Name: Sparsh Jain
+Roll: 111601026
+
+Each State is a tuple of wickets remaining and the number of overs remaining for each bowler expressed as a string
+
+Since the time is finite, only 1 iteration of Bellman Operator will converge to the optimal value function and give the corresponding policy
+
+Value to optimise is the runs scored (minimize)
+
+The code generates a text file named policy.txt as output
+
+It also simulates 10 matches and stores the scoreboard in respective text files
+
+Code file, output file, and match simulations are attached

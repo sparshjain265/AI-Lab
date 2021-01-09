@@ -1,0 +1,11 @@
+Name: Sparsh Jain
+Roll: 111601026
+
+The given code performs value iteration on the grid world.
+There are two versions in the code:
+1. The Bellman operator is applied a fixed number of times
+2. The Bellman operator is applied till the value updation is below some threshold (with a limit on max number of iterations)
+
+The second version is better as it can give it faster code in cases where the convergence happens quickly while a more optimal value in cases where it converges slowly as the limit on max number of iterations can be set quite high
+
+A sample input and output file is attached

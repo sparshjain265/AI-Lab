@@ -79,88 +79,82 @@ class Navigation:
         #store the state of each node as parent, g(n), h(n), mode
         #each node is now stored as a tuple of (node, budget) in the search tree
         state = dict()
-        visited = set()
-        seen = set()
         Q = []
         heapq.heapify(Q)
 
-        #for i in range(self.n):
-        #    state[(i, budget)] = (-1, math.inf, self.heuristic(self.node[i], speed))
+        explored = set()
+        qcount = 0
+
+        frontier = []				
         
-        state[(self.start, budget)] = ((-1, budget), 0, self.heuristic(self.node[self.start], speed), -1)
-        heapq.heappush(Q, (state[(self.start, budget)][1] + state[(self.start, budget)][2], budget, self.start))
-        seen.add((self.start, budget))
+        state[(self.start, budget)] = ((-1, -1), 0, self.heuristic(self.node[self.start], speed), -1)
+
+        heapq.heappush(Q, (state[(self.start, budget)][1] + state[(self.start, budget)][2], budget, qcount, self.start))
+        frontier.append((self.start, budget))
 
         counter = 0
         while Q:
             counter += 1
-            d, m, curr = heapq.heappop(Q)
-            #if((curr, m) in seen):
-            #    seen.remove((curr, m))
-            current = (curr, m)
+            print("counter: " + str(counter))
+            d, m, w, curr = heapq.heappop(Q)
+            frontier.remove((curr, m))
+            
             #do not expand a node where money left is less than 0
             if(m < 0):
                 continue
 
             if(curr == self.goal):
-                self.printPath(state, m)
+                self.printPath(state, m, budget)
                 return True
 
-            visited.add((curr, m))
+            explored.add(curr)
 
             for v in self.graph[curr]:
                 vertex = v[0]
-                V = (vertex, m)
                 weight = v[1]
-                if(V not in visited):
-                    if(weight <= 3): #Bus cannot go, cycle doesn't cost
-                        if(V not in seen):  #create fresh state
-                            state[V] = ((curr,m), state[current][1] + weight/cycle, self.heuristic(self.node[vertex], speed), 1)
-                            heapq.heappush(Q, (state[V][1] + state[V][2], m, vertex))
-                            seen.add(V)
-                        else:                   #check and update state if required
-                            if(state[V][1] > state[current][1] + weight/cycle):
-                                state[V] = ((curr,m), state[current][1] + weight/cycle, self.heuristic(self.node[vertex], speed), 1)
-                                heapq.heappush(Q, (state[V][1] + state[V][2], m, vertex))
-                                seen.add(V)
+                s = (vertex, m)
 
-                    else: #both can go
-                        #For Cycle, no cost
-                        if(V not in seen):  #create fresh state
-                            state[V] = ((curr,m), state[current][1] + weight/cycle, self.heuristic(self.node[vertex], speed), 1)
-                            heapq.heappush(Q, (state[V][1] + state[V][2], m, vertex))
-                            seen.add(V)
-                        else:                   #check and update state if required
-                            if(state[V][1] > state[current][1] + weight/cycle):
-                                state[V] = ((curr,m), state[current][1] + weight/cycle, self.heuristic(self.node[vertex], speed), 1)
-                                heapq.heappush(Q, (state[V][1] + state[V][2], m, vertex))
-                                seen.add(V)
-                        
-                        #For bus, there is a cost
-                        time = weight/cycle
-                        c = cost * time
-                        m = m - c
-                        V = (vertex, m)
-                        if(V not in seen): #create fresh state
-                            state[V] = ((curr,m + c), state[current][1] + time, self.heuristic(self.node[vertex], speed), 0)
-                            heapq.heappush(Q, (state[V][1] + state[V][2], m, vertex))
-                            seen.add(V)
-                        else:                  #check and update state if required
-                            if(state[V][1] > state[current][1] + time):
-                                state[V] = ((curr,m + c), state[current][1] + time, self.heuristic(self.node[vertex], speed), 0)
-                                heapq.heappush(Q, (state[V][1] + state[V][2], m, vertex))
-                                seen.add(V)
+                #add cycle in frontier
+                if(s not in explored and s not in frontier):
+                    state[s] = ((curr, m), state[(curr, m)][1] + weight/cycle, self.heuristic(self.node[vertex], cycle), 1)
+                    qcount += 1
+                    heapq.heappush(Q, (state[s][1] + state[s][2], m, qcount, vertex))
+                    frontier.append(s)
+               
+                elif s in frontier:
+                    if(state[s][1] > state[(curr, m)][1] + weight/cycle):
+                        state[s] = ((curr, m), state[(curr, m)][1] + weight/cycle, self.heuristic(self.node[vertex], cycle), 1)
+                        qcount += 1
+                        heapq.heappush(Q, (state[s][1] + state[s][2], m, qcount, vertex))
+                        frontier.append(s)
+                
+                #add bus in frontier subject to condition
+                b = int(m - (weight/bus)*cost)
+                if(weight > 3 and b > 0):
+                    s = (vertex, b)
+                    if(s not in explored and s not in frontier):
+                        state[s] = ((curr, m), state[(curr, m)][1] + weight/bus, self.heuristic(self.node[vertex], bus), 0)
+                        qcount += 1
+                        heapq.heappush(Q, (state[s][1] + state[s][2], b, qcount, vertex))
+                        frontier.append(s)
+               
+                    elif s in frontier:
+                        if(state[s][1] > state[(curr, m)][1] + weight/bus):
+                            state[s] = ((curr, m), state[(curr, m)][1] + weight/bus, self.heuristic(self.node[vertex], bus), 0)
+                            qcount += 1
+                            heapq.heappush(Q, (state[s][1] + state[s][2], b, qcount, vertex))
+                            frontier.append(s)
                         
         print("Path not found")
         return False
 
-    def printPath(self, state, m):
+    def printPath(self, state, m, budget):
         current = (self.goal, m)
         path = []
         while(current[0] != self.start):
             path.insert(0, (current[0], state[current][3]))
             current = state[current][0]
-        path.insert(0, (current, -1))
+        path.insert(0, (self.start, state[(self.start, budget)][3]))
         print("Path:", end = " ")
         for (i, j) in path:
             if(j == -1):
@@ -171,15 +165,15 @@ class Navigation:
                 j = "Cycle"
             print(j + " " + str(i + 1), end = " ")
         print()
-        print("Total Cost: " + str(state[self.goal][1] * 60) + " minutes.")
+        print("Total Cost: " + str(state[(self.goal, m)][1] * 60) + " minutes.")
         print("Money Left: " + str(m))
         print()
 
 Travel1 = Navigation()
-Travel1.astar(0, 20, 1)
+Travel1.astar(0, 200, 1)
 
 Travel2 = Navigation()
-Travel2.astar(50, 20, 1)
+#Travel2.astar(50, 200, 1)
 
 Travel3 = Navigation()
-Travel3.astar(100, 20, 1)
+#Travel3.astar(100, 200, 1)

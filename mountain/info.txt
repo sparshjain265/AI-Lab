@@ -1,0 +1,8 @@
+Name: Sparsh Jain
+Roll: 111601026
+
+The Position and Velocity are discretised and initial value is taken to be 0 everywhere
+Using value iteration, the optimal policy is found and the game is simulated from the starting conditions till we reach the goal
+Optimal Value and Policy are saved in a text file
+
+Sample output, optimal value and policy are attached

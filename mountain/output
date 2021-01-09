@@ -1,0 +1,159 @@
+#Iterations: 1	e: 31.0
+#Iterations: 2	e: 30.0
+#Iterations: 3	e: 29.0
+#Iterations: 4	e: 28.0
+#Iterations: 5	e: 28.0
+#Iterations: 6	e: 28.0
+#Iterations: 7	e: 27.0
+#Iterations: 8	e: 27.0
+#Iterations: 9	e: 27.0
+#Iterations: 10	e: 27.0
+#Iterations: 11	e: 27.0
+#Iterations: 12	e: 27.0
+#Iterations: 13	e: 26.0
+#Iterations: 14	e: 26.0
+#Iterations: 15	e: 26.0
+#Iterations: 16	e: 26.0
+#Iterations: 17	e: 25.0
+#Iterations: 18	e: 25.0
+#Iterations: 19	e: 25.0
+#Iterations: 20	e: 25.0
+#Iterations: 21	e: 21.0
+#Iterations: 22	e: 2.0
+#Iterations: 23	e: 1.0
+#Iterations: 24	e: 1.0
+#Iterations: 25	e: 1.0
+#Iterations: 26	e: 1.0
+#Iterations: 27	e: 1.0
+#Iterations: 28	e: 1.0
+#Iterations: 29	e: 1.0
+#Iterations: 30	e: 1.0
+#Iterations: 31	e: 1.0
+#Iterations: 32	e: 1.0
+#Iterations: 33	e: 1.0
+#Iterations: 34	e: 1.0
+#Iterations: 35	e: 1.0
+#Iterations: 36	e: 1.0
+#Iterations: 37	e: 1.0
+#Iterations: 38	e: 1.0
+#Iterations: 39	e: 1.0
+#Iterations: 40	e: 1.0
+#Iterations: 41	e: 1.0
+#Iterations: 42	e: 1.0
+#Iterations: 43	e: 1.0
+#Iterations: 44	e: 1.0
+#Iterations: 45	e: 1.0
+#Iterations: 46	e: 1.0
+#Iterations: 47	e: 1.0
+#Iterations: 48	e: 1.0
+#Iterations: 49	e: 1.0
+#Iterations: 50	e: 1.0
+#Iterations: 51	e: 1.0
+#Iterations: 52	e: 1.0
+#Iterations: 53	e: 1.0
+#Iterations: 54	e: 1.0
+#Iterations: 55	e: 1.0
+#Iterations: 56	e: 1.0
+#Iterations: 57	e: 1.0
+#Iterations: 58	e: 1.0
+#Iterations: 59	e: 1.0
+#Iterations: 60	e: 1.0
+#Iterations: 61	e: 1.0
+#Iterations: 62	e: 1.0
+#Iterations: 63	e: 1.0
+#Iterations: 64	e: 1.0
+#Iterations: 65	e: 1.0
+#Iterations: 66	e: 1.0
+#Iterations: 67	e: 1.0
+#Iterations: 68	e: 1.0
+#Iterations: 69	e: 1.0
+#Iterations: 70	e: 1.0
+#Iterations: 71	e: 1.0
+#Iterations: 72	e: 1.0
+#Iterations: 73	e: 1.0
+#Iterations: 74	e: 1.0
+#Iterations: 75	e: 1.0
+#Iterations: 76	e: 1.0
+#Iterations: 77	e: 1.0
+#Iterations: 78	e: 1.0
+#Iterations: 79	e: 0.0
+
+
+Let's Start
+Position: -0.5	Velocity: 0	Action: -1.0
+Position: -0.5021768430041692	Velocity: -0.0021768430041692573	Action: -1.0
+Position: -0.5065142399324192	Velocity: -0.0043373969282499815	Action: -1.0
+Position: -0.5129797147856346	Velocity: -0.006465474853215425	Action: -1.0
+Position: -0.5215248191242872	Velocity: -0.008545104338652467	Action: -1.0
+Position: -0.532085478036137	Velocity: -0.01056065891184988	Action: -1.0
+Position: -0.544582493556012	Velocity: -0.012497015519874899	Action: -1.0
+Position: -0.5589222351147102	Velocity: -0.014339741558698259	Action: -1.0
+Position: -0.5749975462894518	Velocity: -0.016075311174741574	Action: -1.0
+Position: -0.5926888924727436	Velocity: -0.01769134618329181	Action: -1.0
+Position: -0.6118657650433622	Velocity: -0.01917687257061864	Action: -1.0
+Position: -0.6323883446664907	Velocity: -0.02052257962312849	Action: -1.0
+Position: -0.6541094104327725	Velocity: -0.021721065766281793	Action: -1.0
+Position: -0.6768764640969965	Velocity: -0.02276705366422409	Action: -1.0
+Position: -0.7005340214644674	Velocity: -0.023657557367470876	Action: -1.0
+Position: -0.7249260078991203	Velocity: -0.024391986434652936	Action: -1.0
+Position: -0.7498981837710644	Velocity: -0.02497217587194416	Action: -1.0
+Position: -0.7753005198130429	Velocity: -0.025402336041978526	Action: -1.0
+Position: -0.8009894425980136	Velocity: -0.02568892278497075	Action: -1.0
+Position: -0.8268298767325967	Velocity: -0.02584043413458307	Action: -1.0
+Position: -0.8526970221951083	Velocity: -0.025867145462511627	Action: -1.0
+Position: -0.8784778212267057	Velocity: -0.025780799031597367	Action: 1.0
+Position: -0.9000720876036692	Velocity: -0.0215942663769635	Action: -1.0
+Position: -0.9214059426125101	Velocity: -0.021333855008840847	Action: -1.0
+Position: -0.9424157097079521	Velocity: -0.02100976709544202	Action: 1.0
+Position: -0.959047979446972	Velocity: -0.016632269739019927	Action: 1.0
+Position: -0.9712671573339751	Velocity: -0.012219177887003064	Action: 1.0
+Position: -0.9790509162701075	Velocity: -0.007783758936132432	Action: -1.0
+Position: -0.9863867380863952	Velocity: -0.007335821816287698	Action: 0.0
+Position: -0.9912640466425349	Velocity: -0.00487730855613968	Action: -1.0
+Position: -0.9956764689564886	Velocity: -0.004412422313953774	Action: -1.0
+Position: -0.9996186941140587	Velocity: -0.003942225157570057	Action: -1.0
+Position: -1.0030863432235275	Velocity: -0.0034676491094688725	Action: 0.0
+Position: -1.0040758506411702	Velocity: -0.0009895074176427517	Action: -1.0
+Position: -1.004586248062905	Velocity: -0.0005103974217348932	Action: -1.0
+Position: -1.0046170445681022	Velocity: -3.079650519718967e-05	Action: -1.0
+Position: -1.0041682107214136	Velocity: 0.00044883384668851925	Action: -1.0
+Position: -1.0032401776124362	Velocity: 0.0009280331089774239	Action: 1.0
+Position: -0.9978338508398151	Velocity: 0.005406326772621088	Action: 1.0
+Position: -0.9879548877207804	Velocity: 0.009878963119034634	Action: 1.0
+Position: -0.9736153048266714	Velocity: 0.014339582894109035	Action: 1.0
+Position: -0.9548363863909082	Velocity: 0.018778918435763212	Action: 1.0
+Position: -0.9316528245986653	Velocity: 0.023183561792242856	Action: 1.0
+Position: -0.90411795900121	Velocity: 0.02753486559745531	Action: 1.0
+Position: -0.8723098863584935	Velocity: 0.03180807264271647	Action: 1.0
+Position: -0.836338081705744	Velocity: 0.035971804652749545	Action: 1.0
+Position: -0.7963500126324918	Velocity: 0.03998806907325219	Action: 1.0
+Position: -0.7525370601587669	Velocity: 0.04381295247372496	Action: 0.0
+Position: -0.7071389141198217	Velocity: 0.0453981460389452	Action: 1.0
+Position: -0.6584327279614159	Velocity: 0.04870618615840568	Action: 1.0
+Position: -0.6067426396351121	Velocity: 0.051690088326303806	Action: 1.0
+Position: -0.5524354183541762	Velocity: 0.054307221280935854	Action: 1.0
+Position: -0.4959121919172717	Velocity: 0.05652322643690451	Action: 1.0
+Position: -0.4375963761808355	Velocity: 0.058315815736436176	Action: 1.0
+Position: -0.3779184459920568	Velocity: 0.05967793018877873	Action: 0.0
+Position: -0.3192986668882212	Velocity: 0.058619779103835604	Action: 1.0
+Position: -0.2601169935190945	Velocity: 0.059181673369126706	Action: 1.0
+Position: -0.20071198679203553	Velocity: 0.05940500672705898	Action: 1.0
+Position: -0.14136729926285718	Velocity: 0.05934468752917834	Action: 1.0
+Position: -0.08230113341291362	Velocity: 0.05906616584994356	Action: 0.0
+Position: -0.025659152278256117	Velocity: 0.0566419811346575	Action: 1.0
+Position: 0.030490232110710884	Velocity: 0.056149384388967	Action: -1.0
+Position: 0.08215006781990199	Velocity: 0.0516598357091911	Action: -1.0
+Position: 0.129385442156764	Velocity: 0.04723537433686201	Action: -1.0
+Position: 0.1723067954165413	Velocity: 0.04292135325977727	Action: 0.0
+Position: 0.21305478552392015	Velocity: 0.040747990107378874	Action: 0.0
+Position: 0.2517962893307479	Velocity: 0.038741503806827705	Action: 1.0
+Position: 0.2907177806343338	Velocity: 0.03892149130358591	Action: 0.0
+Position: 0.32803132395793805	Velocity: 0.03731354332360427	Action: 1.0
+Position: 0.36596082264310037	Velocity: 0.0379294986851623	Action: 0.0
+Position: 0.4027516156701806	Velocity: 0.03679079302708019	Action: 1.0
+Position: 0.4406557795575556	Velocity: 0.03790416388737502	Action: 0.0
+Position: 0.4779442704901035	Velocity: 0.037288490932547914	Action: 0.0
+Position: 0.514891422172009	Velocity: 0.0369471516819055	Action: 0.0
+Position: 0.5517732761299232	Velocity: 0.03688185395791417	Action: 0.0
+Position: 0.5888661873255663	Velocity: 0.037092911195643063	Action: -1.0
+Position: 0.6	Velocity: 0	Reached Goal

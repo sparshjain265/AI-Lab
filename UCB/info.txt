@@ -1,0 +1,7 @@
+Name: Sparsh Jain
+Roll: 111601026
+
+Logic:
+	The program is given 5 arms, probabilities associated with each arm, and rewards on success or failure
+	It applies upper bound confidence and checks which arm to pull next
+	In the end it plots the fraction for each arm about how many times it has been chosen over time

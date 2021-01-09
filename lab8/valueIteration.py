@@ -13,13 +13,14 @@ class grid:
 				self.mat[i][j] = int(x)
 		
 		self.discount = float(input("Enter the discount factor (between 0 and 1, both excluded): "))
-		
+		print()
 		self.x = -1
 		self.y = -1
 
-		self.action = ["up", "left", "down", "right"]
+		self.action = ["up   ", "left ", "down ", "right"]
 		self.A = 4
 
+	#returns True or False based on whether the action is possible or not
 	def take_action(self, a, x, y):
 		self.x = x
 		self.y = y
@@ -32,6 +33,7 @@ class grid:
 		elif(a == 3):
 			return self.right()
 
+	#action functions
 	def up(self):
 		if(self.x == 0):
 			return False
@@ -61,36 +63,37 @@ class grid:
 		self.y += 1
 		return True
 
-#	#give some probability to each possible action
-#	#double the probability of action tried
-#	#give some probability to stay there
-#	#normalize the probability to make sum = 1
-#	#return probability matrix
-#	def calc_probability(self, a, x, y):
-#		probability = np.reshape([0]*self.dimension*self.dimension, (self.dimension, self.dimension))
-#		for i in range(self.A):
-#			if(self.take_action(i, x, y)):
-#				p = abs(a - i) + 1
-#				if(p == 4):
-#					p = 2
-#				if(p == 3):
-#					p = 5
-#				p = 1/p
-#				probability[self.x][self.y] = p
-#		if(self.take_action(a, x, y)):
-#			probability[self.x][self.y] *= 2.0
-#		probability[x][y] = 0.3
-#		probability = probability / probability.sum()
-#		return probability
-
+	#give some probability to each possible action
+	#double the probability of action tried
+	#give some probability to stay there
+	#normalize the probability to make sum = 1
+	#return probability matrix
 	def calc_probability(self, a, x, y):
 		probability = np.reshape([0]*self.dimension*self.dimension, (self.dimension, self.dimension))
+		for i in range(self.A):
+			if(self.take_action(i, x, y)):
+				p = abs(a - i) + 1
+				if(p == 4):
+					p = 2
+				if(p == 3):
+					p = 5
+				p = 1/p
+				probability[self.x][self.y] = p
 		if(self.take_action(a, x, y)):
-			probability[self.x][self.y] = 1
-		else:
-			probability[x][y] = 1
+			probability[self.x][self.y] *= 2.0
+		probability[x][y] = 0.3
+		probability = probability / probability.sum()
 		return probability
 
+	# def calc_probability(self, a, x, y):
+	# 	probability = np.reshape([0]*self.dimension*self.dimension, (self.dimension, self.dimension))
+	# 	if(self.take_action(a, x, y)):
+	# 		probability[self.x][self.y] = 1
+	# 	else:
+	# 		probability[x][y] = 1
+	# 	return probability
+
+	#Bellman operator
 	def Bellman(self, v):
 		Uv = np.copy(v)
 		policy = np.reshape([-1]*self.dimension*self.dimension, (self.dimension, self.dimension))
@@ -113,6 +116,7 @@ class grid:
 				policy[i][j] = arg
 		return (Uv, policy)
 	
+	#iterates through a fixed number of times and get the optimal value
 	def iteration(self, n):
 		V = np.zeros((n, self.dimension, self.dimension))
 		policy = np.reshape([-1]*self.dimension*self.dimension, (self.dimension, self.dimension))
@@ -135,5 +139,33 @@ class grid:
 			print(p[i])
 		#print("Reference: " + str(self.action))
 
+	#optimises the value upto error e but iterates at max a fixed number of times
+	def optimize(self, n, e):
+		V = np.zeros((n, self.dimension, self.dimension))
+		policy = np.reshape([-1]*self.dimension*self.dimension, (self.dimension, self.dimension))
+		#print(V[0])
+		i = 0
+		while i < n - 1:
+			V[i + 1] , policy = self.Bellman(V[i])
+			print(str(i+1) + ". Value[0][0]: " + str(V[i][0][0]))
+			if(abs(V[i+1][0][0] - V[i][0][0]) < e):
+				break;
+			i += 1
+		print(str(i+1) + ". Value[0][0]: " + str(V[i+1][0][0]))
+
+		print("Optimal Values after " + str(i+1) + " iterations: ")
+		print(V[i+1])
+		p = [" "]*self.dimension
+		for i in range(self.dimension):
+			p[i] = [" "]*self.dimension
+		for i in range(self.dimension):
+			for j in range(self.dimension):
+				p[i][j] = self.action[policy[i][j]]
+		print("Optimal Policy after " + str(i+1) + " iterations: ")
+		for i in range(self.dimension):
+			print(p[i])
+		#print("Reference: " + str(self.action))
+
 Grid = grid()
-Grid.iteration(100)
+#Grid.iteration(100)
+Grid.optimize(1000, 0.001)

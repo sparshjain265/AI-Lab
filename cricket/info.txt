@@ -1,0 +1,12 @@
+Name: Sparsh Jain
+Roll: 111601026
+
+The Code works through simple value iteration function but takes the discount factor as 1
+This can be done since the time is not infinity and the match has to end
+Due to this, we can use properties of dynamic programming and through 1 iteration get the optimal value function
+
+Sample output file is attached.
+The code generates a text file for policy and value, that is also attached
+
+The code simulates 10 matches and saves the scoreboard in txt files
+Sample match simulations are attached

@@ -1,0 +1,31 @@
+Name: Sparsh Jain
+Roll: 111601026
+
+Random Search:
+	Generates Random Population and selects the best out of it
+
+Basic Genetic Algorithm:
+	In each generation:
+		The Population is shuffled
+		Crossover is attempted between first half of the Population with the second half of the Population
+		Mutation is attempted on the children
+		Best 2 out of 2 parents and 2 children are selected and they replace the parents
+
+Elitism:
+	In each generation:
+		The Population is shuffled
+		*Crossover is attempted between the best 2 of the whole Population only*
+		Mutation is attempted on children
+		Best 2 are selected again
+
+Diversity:
+	In each generation:
+		The Population is shuffled
+		Crossover is attempted between first half of the Population with the second half of the Population
+		Mutation is attempted on children
+		*2 individuals are randombly selected instead of best 2*
+
+In each plot, all 3 functions are plotted against generation
+
+Below is the link to the drive folder where all the plots are saved
+https://drive.google.com/drive/folders/1z8gRpoBK3NBBzq_zKsc2n5e8EuK2CV2d?usp=sharing

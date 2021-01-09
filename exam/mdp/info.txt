@@ -1,0 +1,27 @@
+Name: Sparsh Jain
+Roll: 111601026
+
+The program takes A, B, C as input which are the max number of cars allowed in location A, B, C (to try small inputs since the given input is taking very long)
+The program also takes delta as input which means the max number of cars which can be shifted from or to a particular location
+
+state is defined as a triplet a, b, c : which refers to the number of cars in location A, B, and C respectively
+action is defined as a triplet i, j, k: which means the number of cars added or subtracted from locations A, B, C respectively
+Note that: i + j + k = 0 since we will shuffle from the cars we already have
+i, j, k are all within the 'delta' limit
+Also note that since the cost is only between the transfer of Location A with other locations, i*2 will give the total cost
+
+a dictionary of poission probability is built for faster access the next time a probability is required
+
+Main Logic: The Bellman Equation
+For each state:
+	Iterate through all the actions, calculate value, and take the minimum value action as the policy of this state
+
+Minimum value as cost is defined as positive and reward is defined as negative
+
+In value iteration, we iterate till the max norm of value function is less than the given threshold of 0.1
+
+It prints the 'e' value, that is the max norm of Uv - v after each iteration
+
+It prints the state, corresponding policy and value function as well
+
+4 sample inputs and outputs are attached
